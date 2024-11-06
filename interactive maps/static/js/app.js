@@ -2,7 +2,7 @@ let geoJsonLayer; // Declare a global variable for the GeoJSON layer
 
 function buildMap(callback) {
   let myMap = L.map("map", {
-    center: [38.8053, -122.7808],
+    center: [51.505, -0.09],
     zoom: 2
   });
 
@@ -27,33 +27,55 @@ function buildMap(callback) {
   });
 }
 
-function updateMap(country) {
-  geoJsonLayer.eachLayer(function(layer) {
-    if (layer.feature.properties.ADMIN === country) {
-      // Update the style or perform any action on the matching layer
-      layer.setStyle({
-        color: "gray",
-        fillColor: "red",
-        fillOpacity: 0.7
+function updateMap(stat) {
+
+  d3.json("https://api.jsonbin.io/v3/qs/672bec55e41b4d34e44fcba1").then(async (data) => {
+    objects = data.record;
+    for (let i = 0; i < objects.length; i++) {
+      let value = objects[i][stat];
+      let country = objects[i]["Country"];
+      await new Promise((resolve) => {
+        geoJsonLayer.eachLayer(function(layer) {
+          if (layer.feature.properties.ADMIN === country || layer.feature.properties.ISO_A3 === country) {
+          // Update the style or perform any action on the matching layer
+            layer.setStyle({
+              color: "gray",
+              fillColor: "red",
+              fillOpacity: 0.7
+            });
+
+            let coordinates = layer.getBounds().getCenter();
+            L.marker(coordinates)
+              .addTo(geoJsonLayer)
+              .bindPopup(country + "<br>" + stat + ": " + value);
+            
+            resolve();
+          }
+        });
       });
-    } else {
-      // Optionally reset the style of non-matching layers
-      layer.setStyle({
-        color: "gray",
-        fillColor: "lightgray",
-        fillOpacity: 0.5
-      });
+      //geoJsonLayer.addLayer(markerLayerGroup);
     }
   });
 }
 
 function init() {
-  buildMap(function() {
-    document.getElementById("countrySelect").addEventListener("change", function() {
-      const selectedCountry = this.value;
-      updateMap(selectedCountry);
+  d3.json("https://api.jsonbin.io/v3/qs/672bec55e41b4d34e44fcba1").then((data) => {
+    objects = data.record;
+    buildMap(function() {
+    const names = Object.keys(objects[0]);
+    let dropdown = d3.select("#dropdown");
+    names.forEach((n) => {
+      dropdown.append("option")
+      .text(n)
+      .attr("value", n);
+      });
     });
   });
 }
+
+function optionChanged(newSample) {
+  updateMap(newSample);
+}
+
 
 init();
