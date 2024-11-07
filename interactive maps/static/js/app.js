@@ -29,8 +29,10 @@ function buildMap(callback) {
 
 function updateMap(stat) {
 
-  d3.json("https://api.jsonbin.io/v3/qs/672bec55e41b4d34e44fcba1").then(async (data) => {
+  d3.json("https://api.jsonbin.io/v3/qs/672c39a6e41b4d34e44feb1c").then(async (data) => {
     objects = data.record;
+    const colorScale = d3.scaleSequential(d3.interpolateRdYlGn)
+        .domain([-10, 10]);
     for (let i = 0; i < objects.length; i++) {
       let value = objects[i][stat];
       let country = objects[i]["Country"];
@@ -40,7 +42,7 @@ function updateMap(stat) {
           // Update the style or perform any action on the matching layer
             layer.setStyle({
               color: "gray",
-              fillColor: "red",
+              fillColor: colorScale(value),
               fillOpacity: 0.7
             });
 
@@ -53,13 +55,12 @@ function updateMap(stat) {
           }
         });
       });
-      //geoJsonLayer.addLayer(markerLayerGroup);
     }
   });
 }
 
 function init() {
-  d3.json("https://api.jsonbin.io/v3/qs/672bec55e41b4d34e44fcba1").then((data) => {
+  d3.json("https://api.jsonbin.io/v3/qs/672c39a6e41b4d34e44feb1c").then((data) => {
     objects = data.record;
     buildMap(function() {
     const names = Object.keys(objects[0]);
