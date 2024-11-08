@@ -1,5 +1,6 @@
 [
     {
+        "Year Range":"2019-2020",
         "Country":"USA",
         "GDP (in Trillions USD)":2.8810408922,
         "GDP per Capita (in USD)":-1.8461538462,
@@ -14,6 +15,7 @@
         "Crime Rate (per 100,000)":-1.7612524462
     },
     {
+        "Year Range":"2019-2020",
         "Country":"Russia",
         "GDP (in Trillions USD)":5.0314465409,
         "GDP per Capita (in USD)":7.2463768116,
@@ -28,6 +30,7 @@
         "Crime Rate (per 100,000)":5.601659751
     },
     {
+        "Year Range":"2019-2020",
         "Country":"Canada",
         "GDP (in Trillions USD)":-7.7348066298,
         "GDP per Capita (in USD)":-2.6639344262,
@@ -42,6 +45,7 @@
         "Crime Rate (per 100,000)":-3.1158714703
     },
     {
+        "Year Range":"2019-2020",
         "Country":"China",
         "GDP (in Trillions USD)":-4.1976980366,
         "GDP per Capita (in USD)":-1.4127144299,
@@ -56,6 +60,7 @@
         "Crime Rate (per 100,000)":-8.5959885387
     },
     {
+        "Year Range":"2019-2020",
         "Country":"India",
         "GDP (in Trillions USD)":-5.4794520548,
         "GDP per Capita (in USD)":-4.1095890411,
@@ -70,6 +75,7 @@
         "Crime Rate (per 100,000)":1.7892644135
     },
     {
+        "Year Range":"2019-2020",
         "Country":"Australia",
         "GDP (in Trillions USD)":-8.6330935252,
         "GDP per Capita (in USD)":1.7525773196,
