@@ -27,15 +27,20 @@ function buildMap(callback) {
   });
 }
 
-function updateMap(stat) {
+function updateMap(stat, year) {
 
-  d3.json("https://api.jsonbin.io/v3/qs/672c39a6e41b4d34e44feb1c").then(async (data) => {
+  d3.json("https://api.jsonbin.io/v3/qs/672d6689e41b4d34e450814f").then(async (data) => {
     objects = data.record;
+    selectedData = objects.filter(item => item["Year Range"] === year);
+    
+    
+    
+    
     const colorScale = d3.scaleSequential(d3.interpolateRdYlGn)
         .domain([-10, 10]);
     for (let i = 0; i < objects.length; i++) {
-      let value = objects[i][stat];
-      let country = objects[i]["Country"];
+      let value = selectedData[i][stat];
+      let country = selectedData[i]["Country"];
       await new Promise((resolve) => {
         geoJsonLayer.eachLayer(function(layer) {
           if (layer.feature.properties.ADMIN === country || layer.feature.properties.ISO_A3 === country) {
@@ -60,10 +65,11 @@ function updateMap(stat) {
 }
 
 function init() {
-  d3.json("https://api.jsonbin.io/v3/qs/672c39a6e41b4d34e44feb1c").then((data) => {
+  d3.json("https://api.jsonbin.io/v3/qs/672d6689e41b4d34e450814f").then((data) => {
     objects = data.record;
     buildMap(function() {
     const names = Object.keys(objects[0]);
+    console.log(objects[0]);
     let dropdown = d3.select("#dropdown");
     names.forEach((n) => {
       dropdown.append("option")
@@ -71,11 +77,24 @@ function init() {
       .attr("value", n);
       });
     });
+    const years = [...new Set(objects.map(item => item["Year Range"]))];
+    let yearDropdown = d3.select("#yearDropdown");
+    years.forEach((y) => {
+      yearDropdown.append("option")
+      .text(y)
+      .attr("value", y);
+    });
   });
 }
 
-function optionChanged(newSample) {
-  updateMap(newSample);
+function optionChanged(newStat) {
+  const selectedYear = document.getElementById("yearDropdown").value;
+  updateMap(newStat, selectedYear);
+}
+
+function yearChanged(newYear) {
+  const selectedStat = document.getElementById("dropdown").value;
+  updateMap(selectedStat, newYear);
 }
 
 

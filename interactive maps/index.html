@@ -25,9 +25,14 @@
     <div class="row h-100">
       <!-- Sidebar for dropdown menu -->
       <div class="col-md-3 bg-light p-3">
-        <h4>Select Country</h4>
+        <h4>Select Stat</h4>
         <select id="dropdown" onchange="optionChanged(this.value)" class="form-control">
           <!-- Add more options as needed -->
+        </select>
+
+        <h4>Select Year</h4>
+        <select id="yearDropdown" onchange="yearChanged(this.value)" class="form-control">
+        <!-- Year options go here -->
         </select>
       </div>
   
