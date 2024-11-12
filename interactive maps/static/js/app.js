@@ -23,19 +23,55 @@ function buildMap(callback) {
     
     geoJsonLayer = L.geoJson(filteredData, { style: style }).addTo(myMap);
 
+    const legend = L.control({ position: "bottomright" });
+
+    legend.onAdd = function(myMap) {
+      const div = L.DomUtil.create("div", "info legend");
+      div.style.backgroundColor = "white";
+      div.style.padding = "8px";
+      div.style.borderRadius = "5px";
+      div.style.boxShadow = "0 0 15px rgba(0, 0, 0, 0.2)";
+
+      const depths = [-10, -5, 0, 5, 10]; // Depth intervals
+      const labels = [];
+  
+      const colorScale = d3.scaleSequential(d3.interpolateRdYlGn)
+        .domain([-10, 10]);
+      
+      // Generate a label for each depth interval
+      for (let i = 0; i < depths.length; i++) {
+          const color = colorScale(depths[i]);
+          
+          labels.push(
+              `<i style="background-color: ${color}; width: 18px; height: 18px; display: inline-block; margin-right: 8px;"></i> 
+               ${depths[i]} %`
+          );
+      }
+
+      
+
+      div.innerHTML = "<h4>Percentage Change</h4>" + labels.join("<br>");
+      return div;
+    };
+    legend.addTo(myMap);
+
     if (callback) callback();
   });
 }
 
-function updateMap(stat) {
+function updateMap(stat, year) {
 
-  d3.json("https://api.jsonbin.io/v3/qs/672c39a6e41b4d34e44feb1c").then(async (data) => {
+  d3.json("https://api.jsonbin.io/v3/qs/6733e756acd3cb34a8a7a3bc").then(async (data) => {
     objects = data.record;
+    selectedData = objects.filter(item => item["Year Range"] === year);
+    
+    
+    
     const colorScale = d3.scaleSequential(d3.interpolateRdYlGn)
         .domain([-10, 10]);
-    for (let i = 0; i < objects.length; i++) {
-      let value = objects[i][stat];
-      let country = objects[i]["Country"];
+    for (let i = 0; i < selectedData.length; i++) {
+      let value = selectedData[i][stat];
+      let country = selectedData[i]["Country"];
       await new Promise((resolve) => {
         geoJsonLayer.eachLayer(function(layer) {
           if (layer.feature.properties.ADMIN === country || layer.feature.properties.ISO_A3 === country) {
@@ -46,12 +82,23 @@ function updateMap(stat) {
               fillOpacity: 0.7
             });
 
-            let coordinates = layer.getBounds().getCenter();
+            let coordinates;
+
+            // Set custom coordinates for specific countries
+            if (country === "USA") {
+              coordinates = [37.0902, -95.7129]; // Custom coordinates for USA
+            } else if (country === "Russia") {
+              coordinates = [61.5240, 105.3188]; // Custom coordinates for Russia
+            } else {
+              coordinates = layer.getBounds().getCenter(); // Default center for other countries
+            }
+
             L.marker(coordinates)
               .addTo(geoJsonLayer)
               .bindPopup(country + "<br>" + stat + ": " + value);
-            
+
             resolve();
+
           }
         });
       });
@@ -60,10 +107,10 @@ function updateMap(stat) {
 }
 
 function init() {
-  d3.json("https://api.jsonbin.io/v3/qs/672c39a6e41b4d34e44feb1c").then((data) => {
+  d3.json("https://api.jsonbin.io/v3/qs/6733e756acd3cb34a8a7a3bc").then((data) => {
     objects = data.record;
     buildMap(function() {
-    const names = Object.keys(objects[0]);
+    const names = Object.keys(objects[0]).slice(2);
     let dropdown = d3.select("#dropdown");
     names.forEach((n) => {
       dropdown.append("option")
@@ -71,11 +118,29 @@ function init() {
       .attr("value", n);
       });
     });
+    const years = [...new Set(objects.map(item => item["Year Range"]))];
+    let yearDropdown = d3.select("#yearDropdown");
+    years.forEach((y) => {
+      yearDropdown.append("option")
+      .text(y)
+      .attr("value", y);
+    });
+    const names = Object.keys(objects[0]).slice(2);
+    let firstStat = names[0];
+    let firstYear = years[0];
+    updateMap(firstStat, firstYear);
+
   });
 }
 
-function optionChanged(newSample) {
-  updateMap(newSample);
+function optionChanged(newStat) {
+  const selectedYear = document.getElementById("yearDropdown").value;
+  updateMap(newStat, selectedYear);
+}
+
+function yearChanged(newYear) {
+  const selectedStat = document.getElementById("dropdown").value;
+  updateMap(selectedStat, newYear);
 }
 
 
