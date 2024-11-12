@@ -61,17 +61,15 @@ function buildMap(callback) {
 
 function updateMap(stat, year) {
 
-  d3.json("https://api.jsonbin.io/v3/qs/6732a889e41b4d34e4529c16").then(async (data) => {
+  d3.json("https://api.jsonbin.io/v3/qs/6732ad88ad19ca34f8c85b51").then(async (data) => {
     objects = data.record;
     selectedData = objects.filter(item => item["Year Range"] === year);
-    console.log(selectedData.length);
     
     
     
     const colorScale = d3.scaleSequential(d3.interpolateRdYlGn)
         .domain([-10, 10]);
     for (let i = 0; i < selectedData.length; i++) {
-      console.log(selectedData[i][stat]);
       let value = selectedData[i][stat];
       let country = selectedData[i]["Country"];
       await new Promise((resolve) => {
@@ -109,7 +107,7 @@ function updateMap(stat, year) {
 }
 
 function init() {
-  d3.json("https://api.jsonbin.io/v3/qs/6732a889e41b4d34e4529c16").then((data) => {
+  d3.json("https://api.jsonbin.io/v3/qs/6732ad88ad19ca34f8c85b51").then((data) => {
     objects = data.record;
     buildMap(function() {
     const names = Object.keys(objects[0]).slice(2);
