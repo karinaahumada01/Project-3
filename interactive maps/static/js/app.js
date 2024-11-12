@@ -61,7 +61,7 @@ function buildMap(callback) {
 
 function updateMap(stat, year) {
 
-  d3.json("https://api.jsonbin.io/v3/qs/6732ad88ad19ca34f8c85b51").then(async (data) => {
+  d3.json("https://api.jsonbin.io/v3/qs/6733e756acd3cb34a8a7a3bc").then(async (data) => {
     objects = data.record;
     selectedData = objects.filter(item => item["Year Range"] === year);
     
@@ -107,7 +107,7 @@ function updateMap(stat, year) {
 }
 
 function init() {
-  d3.json("https://api.jsonbin.io/v3/qs/6732ad88ad19ca34f8c85b51").then((data) => {
+  d3.json("https://api.jsonbin.io/v3/qs/6733e756acd3cb34a8a7a3bc").then((data) => {
     objects = data.record;
     buildMap(function() {
     const names = Object.keys(objects[0]).slice(2);
