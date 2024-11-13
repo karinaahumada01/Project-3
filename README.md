@@ -57,7 +57,9 @@ The project uses only publicly available, aggregated data, ensuring privacy and 
 * Bootstrap: Used in index.html for layout and UI components in the web interface.
 
 **Project Requirements**
+
 [Google Slides Presentation](https://docs.google.com/presentation/d/194g9QWPRcC87O2LEPdUfQZhMzzbO3YBtJiXTmnQ5J_k/edit?usp=sharing)  
+
 
 **References**
 * Ali, W. (2024, September 10). Country comparison dataset (USA & more) . Kaggle. https://www.kaggle.com/datasets/waqi786/country-comparison-dataset-usa-and-more/data 
