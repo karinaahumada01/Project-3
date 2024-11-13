@@ -10,12 +10,12 @@ The Country Comparison Project is a data analysis and visualization tool that ex
   * interactive maps:
     * index.html: The main HTML file for the web interface, which includes the interactive map.
     * static: Contains styling and scripting assets for the web interface.
-     * css:
-       * style.css: Stylesheet for customizing the appearance of the interactive map and interface.
-   * js:
-     * app.js: JavaScript code that manages the map’s functionality, including dropdown selections and data updates.
+      * css:
+        * style.css: Stylesheet for customizing the appearance of the interactive map and interface.
+      * js:
+        * app.js: JavaScript code that manages the map’s functionality, including dropdown selections and data updates.
        
-   * trial_code.txt: A text file that may contain additional code snippets or notes for development reference.
+     * trial_code.txt: A text file that may contain additional code snippets or notes for development reference.
   
   * load_data_to_json.ipynb: A Jupyter Notebook that converts CSV datasets to JSON format, preparing the data for integration with the interactive map.
 
