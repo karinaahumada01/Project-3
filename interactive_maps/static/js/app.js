@@ -111,7 +111,7 @@ function updateMap(stat, year) {
             // Add a popup marker displaying country name and statistic
             L.marker(coordinates)
               .addTo(geoJsonLayer)
-              .bindPopup(country + "<br>" + stat + ": " + value);
+              .bindPopup(country + "<br>" + stat + ": " + value.toFixed(2) + "%");
 
             resolve(); // Resolve promise to continue to the next layer
           }
