@@ -10,3 +10,10 @@
 * WHO. (n.d.). Ebola outbreak 2014-2016 - West Africa. World Health Organization. https://www.who.int/emergencies/situations/ebola-outbreak-2014-2016-West-Africa
 * WHO. (2020). Coronavirus disease (covid-19) pandemic. World Health Organization. https://www.who.int/europe/emergencies/situations/covid-19 Yardi, S. (2024, July 18). Home Healthcare Statistics 2024 by Utilization, diagnoses. Market.us Media. https://media.market.us/home-healthcare-statistics/
 * World Economic Forum. (2020, January). The Global Social Mobility Report 2020 Equality, Opportunity and a New Economic Imperative . The World Economic Forum. https://www3.weforum.org/docs/Global_Social_Mobility_Report.pdf 
+
+ChatGPT was used for README outline and format, and troubleshooting errors for this project assignment.
+
+* OpenAI. (November, 2024). ChatGPT (GPT-4) [Large language model]. https://chat.openai.com/
+Xpert Learning Assistant was used for troubleshooting errors for this project assignment.
+
+* Xpert Learning Assistant. (2024). Retrieved from https://bootcampspot.instructure.com/
