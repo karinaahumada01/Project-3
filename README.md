@@ -56,6 +56,9 @@ The project uses only publicly available, aggregated data, ensuring privacy and 
 * D3.js: Employed for color scaling and dynamic data binding.
 * Bootstrap: Used in index.html for layout and UI components in the web interface.
 
+**Project Requirements**
+[Google Slides Presentation](https://docs.google.com/presentation/d/194g9QWPRcC87O2LEPdUfQZhMzzbO3YBtJiXTmnQ5J_k/edit?usp=sharing)  
+
 **References**
 * Ali, W. (2024, September 10). Country comparison dataset (USA & more) . Kaggle. https://www.kaggle.com/datasets/waqi786/country-comparison-dataset-usa-and-more/data 
 * Haberkorn, F., Hoang, T., Lewis, G., Mix, C., & Moore, D. (2024, December 4). Global trade patterns in the wake of the 2018-2019 u.s.-china tariff hikes. The Fed - Global trade patterns in the wake of the 2018-2019 U.S.-China tariff hikes. https://www.federalreserve.gov/econres/notes/feds-notes/global-trade-patterns-in-the-wake-of-the-2018-2019-u-s-china-tariff-hikes-20240412.html#:~:text=In%202018%2C%20the%20U.S.%20government,were%20subject%20to%20additional%20tariffs. 
