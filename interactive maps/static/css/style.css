@@ -1,0 +1,25 @@
+/* Reset padding and margin */
+body, html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+/* Container takes up full height and width */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar for dropdown menu */
+.sidebar {
+  width: 25%; /* Adjust this width as desired */
+  padding: 20px;
+  background-color: #f8f9fa; /* Light gray background */
+}
+
+/* Map styling */
+#map {
+  width: 75%; /* Takes up the remaining space */
+  height: 100%;
+}
