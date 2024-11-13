@@ -8,11 +8,10 @@ The Country Comparison Project is a data analysis and visualization tool that ex
   * country_comparison.ipynb: Main Jupyter Notebook for analyzing country data, calculating percentage changes, and generating insights based on specific events.
   
   * interactive maps:
-  
-   * index.html: The main HTML file for the web interface, which includes the interactive map.
-   * static: Contains styling and scripting assets for the web interface.
-   * css:
-     * style.css: Stylesheet for customizing the appearance of the interactive map and interface.
+    * index.html: The main HTML file for the web interface, which includes the interactive map.
+    * static: Contains styling and scripting assets for the web interface.
+     * css:
+       * style.css: Stylesheet for customizing the appearance of the interactive map and interface.
    * js:
      * app.js: JavaScript code that manages the map’s functionality, including dropdown selections and data updates.
        
