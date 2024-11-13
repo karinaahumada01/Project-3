@@ -58,7 +58,7 @@ The project uses only publicly available, aggregated data, ensuring privacy and 
 
 **Project Requirements**
 
-[Google Slides Presentation](https://docs.google.com/presentation/d/194g9QWPRcC87O2LEPdUfQZhMzzbO3YBtJiXTmnQ5J_k/edit?usp=sharing)  
+* [Google Slides Presentation](https://docs.google.com/presentation/d/194g9QWPRcC87O2LEPdUfQZhMzzbO3YBtJiXTmnQ5J_k/edit?usp=sharing)  
 
 
 **References**
