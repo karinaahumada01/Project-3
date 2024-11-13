@@ -73,7 +73,7 @@ function buildMap(callback) {
 function updateMap(stat, year) {
 
   // Load dataset with country-specific statistics
-  d3.json("https://api.jsonbin.io/v3/qs/6733e756acd3cb34a8a7a3bc").then(async (data) => {
+  d3.json("https://api.jsonbin.io/v3/b/6733fed3ad19ca34f8c92f1e").then(async (data) => {
     objects = data.record;
     selectedData = objects.filter(item => item["Year Range"] === year);
     
@@ -124,7 +124,7 @@ function updateMap(stat, year) {
 // Initialize function to build the map and populate dropdown menus
 function init() {
   // Load data from JSON source to populate dropdowns
-  d3.json("https://api.jsonbin.io/v3/qs/6733e756acd3cb34a8a7a3bc").then((data) => {
+  d3.json("https://api.jsonbin.io/v3/b/6733fed3ad19ca34f8c92f1e").then((data) => {
     objects = data.record;
 
     // Build the map and add callback to create dropdown for statistics
