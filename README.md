@@ -30,12 +30,13 @@ The Country Comparison Project is a data analysis and visualization tool that ex
   * percentages_data.json: Contains percentage change data for key events, which is loaded into the web visualization.
 
 **How to Use and Interact with the Project** 
-#### 1. Data Processing:
+
+##### 1. Data Processing:
   
   * Use country_comparison.ipynb to clean, analyze, and calculate percentage changes in economic indicators.
   * Convert data to JSON format using load_data_to_json.ipynb, creating json_data.json and percentages_data.json for integration with the web interface.
     
-#### 2. Web Application:
+##### 2. Web Application:
 
 * Open interactive maps/index.html in a web browser to access the interactive visualization.
 * Use dropdown menus to select statistics (e.g., GDP, inflation rate) and years. The map will display countries with colors representing the selected indicator, allowing users to explore trends interactively.
