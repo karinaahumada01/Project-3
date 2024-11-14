@@ -61,9 +61,9 @@ The project uses only publicly available, aggregated data, ensuring privacy and 
 * D3.js: Employed for color scaling and dynamic data binding.
 * Bootstrap: Used in index.html for layout and UI components in the web interface.
 
-**Project Requirements**
+### **Project Requirements**
 
-* [Google Slides Presentation](https://docs.google.com/presentation/d/194g9QWPRcC87O2LEPdUfQZhMzzbO3YBtJiXTmnQ5J_k/edit?usp=sharing)  
+### * [Google Slides Presentation](https://docs.google.com/presentation/d/194g9QWPRcC87O2LEPdUfQZhMzzbO3YBtJiXTmnQ5J_k/edit?usp=sharing)  
 
 
 **References**
