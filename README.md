@@ -40,8 +40,11 @@ The Country Comparison Project is a data analysis and visualization tool that ex
 ##### 2. Web Application:
 
 * Open interactive maps/index.html in a web browser to access the interactive visualization.
-* Use dropdown menus to select statistics (e.g., GDP, inflation rate) and years. The map will display countries with colors representing the selected indicator, allowing users to explore trends interactively.
+* Use drop-down menus to select statistics (e.g., GDP, inflation rate) and years. The map will display countries with colors representing the selected indicator, allowing users to explore trends interactively.
 
+##### 3. Python Interactive Visualizations
+
+* Open country_comparison_python_visuals.ipynb to run the python code that produces visualizations and further analyzes the dataset with various python libraries.
 **Ethical Considerations**
 
 The project uses only publicly available, aggregated data, ensuring privacy and ethical compliance by avoiding individual or sensitive data. It aims to provide an unbiased analysis of global economic trends without implying any specific political or personal stance. Visualizations are intended for educational and analytical purposes only.
