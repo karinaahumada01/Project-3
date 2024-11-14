@@ -44,7 +44,8 @@ The Country Comparison Project is a data analysis and visualization tool that ex
 
 ##### 3. Python Interactive Visualizations
 
-* Open country_comparison_python_visuals.ipynb to run the python code that produces visualizations and further analyzes the dataset with various python libraries.
+* Open country_comparison_python_visuals.ipynb to run the python code that produces visualizations and further analyzes the dataset with various Python libraries.
+
 **Ethical Considerations**
 
 The project uses only publicly available, aggregated data, ensuring privacy and ethical compliance by avoiding individual or sensitive data. It aims to provide an unbiased analysis of global economic trends without implying any specific political or personal stance. Visualizations are intended for educational and analytical purposes only.
