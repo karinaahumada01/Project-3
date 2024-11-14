@@ -152,6 +152,7 @@ function init() {
     });
 
     // Set initial selections for statistic and year
+    const names = Object.keys(objects[0]).slice(2);
     let firstStat = names[0];
     let firstYear = years[0];
     updateMap(firstStat, firstYear); // Initialize map with first statistic and year
