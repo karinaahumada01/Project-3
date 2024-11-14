@@ -6,6 +6,7 @@ The Country Comparison Project is a data analysis and visualization tool that ex
 **Project Structure**
 
   * country_comparison.ipynb: Main Jupyter Notebook for analyzing country data, calculating percentage changes, and generating insights based on specific events.
+  * country_comparison_python_visuals.ipynb: Supplementary Jupyter Notebook containing the remaining interactive visualizations for the project.
   
   * interactive maps:
     * index.html: The main HTML file for the web interface, which includes the interactive map.
